@@ -42,6 +42,7 @@ export class ZeroDevEthersProvider<
     if (shouldUsePaymaster) {
       let paymasterConfig = params.opts?.paymasterConfig ?? {
         policy: "VERIFYING_PAYMASTER",
+        baseURL: "http://127.0.0.1:14338"
       };
       paymasterConfig = {
         ...paymasterConfig,

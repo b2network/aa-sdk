@@ -10,10 +10,13 @@ export type PaymasterPolicy = "VERIFYING_PAYMASTER" | "TOKEN_PAYMASTER";
 
 interface PaymasterConfigOptions {
   VERIFYING_PAYMASTER: {};
-  TOKEN_PAYMASTER: { gasToken: SupportedGasToken };
+  TOKEN_PAYMASTER: { 
+    gasToken: SupportedGasToken
+  };
 }
 
 export type PaymasterConfig<T extends PaymasterPolicy> = {
+  baseURL: string,
   policy: T;
   paymasterProvider?: PaymasterAndBundlerProviders;
   onlySendSponsoredTransaction?: boolean;

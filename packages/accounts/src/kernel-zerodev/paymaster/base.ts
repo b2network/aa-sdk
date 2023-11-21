@@ -6,20 +6,24 @@ import {
   resolveProperties,
 } from "@alchemy/aa-core";
 import axios from "axios";
-import { ENTRYPOINT_ADDRESS, PAYMASTER_URL } from "../constants.js";
+import { ENTRYPOINT_ADDRESS } from "../constants.js";
 import type { ZeroDevProvider } from "../provider.js";
 import { hexifyUserOp } from "../utils/ERC4337-utils.js";
 import type { PaymasterAndBundlerProviders } from "./types.js";
-import { getChainId } from "../api/index.js";
 
 export abstract class Paymaster {
-  constructor(protected provider: ZeroDevProvider) {}
+  baseURL: string
+
+  constructor(protected provider: ZeroDevProvider, baseURL: string) {
+    this.baseURL = baseURL
+  }
   abstract getPaymasterResponse(
     struct: UserOperationStruct,
     paymasterProvider?: PaymasterAndBundlerProviders,
     shouldOverrideFee?: boolean
   ): Promise<UserOperationStruct | undefined>;
   protected async signUserOp({
+    chainId,
     userOp,
     callData,
     gasTokenAddress,
@@ -28,6 +32,7 @@ export abstract class Paymaster {
     paymasterProvider,
     shouldOverrideFee = false,
   }: {
+    chainId: number;
     userOp: UserOperationStruct;
     callData?: PromiseOrValue<BytesLike>;
     gasTokenAddress?: string;
@@ -44,11 +49,8 @@ export abstract class Paymaster {
 
       hexifiedERC20UserOp = hexifyUserOp(resolvedERC20UserOp);
     }
-    const chainId = await getChainId(this.provider.getProjectId());
-    if (!chainId) throw new Error("ChainId not found");
     let requestBodyParams = Object.fromEntries(
       Object.entries({
-        projectId: this.provider.getProjectId(),
         chainId,
         userOp: hexifiedUserOp,
         entryPointAddress: ENTRYPOINT_ADDRESS,
@@ -75,7 +77,7 @@ export abstract class Paymaster {
       }).filter(([_, value]) => value !== undefined)
     );
     const { data: paymasterResp } = await axios.post(
-      `${PAYMASTER_URL}/getPaymasterAndData`,
+      `${this.baseURL}/${chainId}/getPaymasterAndData`,
       {
         ...requestBodyParams,
       },

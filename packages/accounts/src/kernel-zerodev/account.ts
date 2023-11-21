@@ -44,6 +44,7 @@ export interface KernelSmartAccountParams<
   TTransport extends Transport | FallbackTransport = Transport
 > extends Partial<BaseSmartAccountParams<TTransport>> {
   projectId: string;
+  implAddress?: Address;
   factoryAddress?: Address;
   index?: bigint;
   validator?: KernelBaseValidator;
@@ -62,6 +63,7 @@ export class KernelSmartContractAccount<
   TTransport extends Transport | FallbackTransport = Transport
 > extends BaseSmartContractAccount<TTransport> {
   private readonly factoryAddress: Address;
+  private readonly implAddress: Address;
   private readonly index: bigint;
   private initCode?: Hex;
   validator?: KernelBaseValidator;
@@ -79,6 +81,7 @@ export class KernelSmartContractAccount<
     this.validator = params.validator;
     this.defaultValidator = params.defaultValidator;
     this.initCode = params.initCode;
+    this.implAddress = params.implAddress ?? KERNEL_IMPL_ADDRESS;
   }
 
   public static async init(
@@ -185,7 +188,7 @@ export class KernelSmartContractAccount<
     // [TODO] - Remove this check once the kernel implementation is updated
     // Also, remove the check for the hardcoded kernel implementation address
     const shouldUseMultiSend =
-      kernelImplAddr?.toLowerCase() !== KERNEL_IMPL_ADDRESS.toLowerCase() &&
+      kernelImplAddr?.toLowerCase() !== this.implAddress.toLowerCase() &&
       kernelImplAddr?.toLowerCase() !==
         "0x8dD4DBB54d8A8Cf0DE6F9CCC4609470A30EfF18C".toLowerCase() &&
       initCode === "0x";
@@ -237,7 +240,7 @@ export class KernelSmartContractAccount<
     return encodeFunctionData({
       abi: KernelAccountAbi,
       functionName: "upgradeTo",
-      args: [KERNEL_IMPL_ADDRESS],
+      args: [this.implAddress],
     });
   }
 
@@ -375,7 +378,7 @@ export class KernelSmartContractAccount<
         abi: KernelFactoryAbi,
         functionName: "createAccount",
         args: [
-          KERNEL_IMPL_ADDRESS,
+          this.implAddress,
           encodeFunctionData({
             abi: KernelAccountAbi,
             functionName: "initialize",

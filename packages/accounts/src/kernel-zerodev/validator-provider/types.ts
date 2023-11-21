@@ -2,6 +2,7 @@ import type { ECDSAValidatorParams } from "../validator/ecdsa-validator.js";
 import type { ERC165SessionKeyValidatorParams } from "../validator/erc165-session-key-validator.js";
 import type { KillSwitchValidatorParams } from "../validator/kill-switch-validator.js";
 import type { SessionKeyValidatorParams } from "../validator/session-key-validator.js";
+import type { SimpleWeightedECDSAValidatorParams } from "../validator/simple-weighted-ecdsa-validator.js";
 import type { SupportedValidators } from "../validator/types.js";
 import type { ExtendedValidatorProviderParams } from "./base.js";
 import type { ECDSAProvider } from "./ecdsa-provider.js";
@@ -16,6 +17,7 @@ import type {
   PrefillSessionData,
   SessionKeyProviderParams,
 } from "./session-key-provider.js";
+import type { SimpleWeightedECDSAProvider } from "./simple-weighted-ecdsa-validator.js";
 
 export type ValidatorProviderTypeMap = {
   ECDSA: ECDSAProvider;
@@ -23,6 +25,7 @@ export type ValidatorProviderTypeMap = {
   ERC165_SESSION_KEY: ERC165SessionKeyProvider;
   SESSION_KEY: SessionKeyProvider;
   RECOVERY: RecoveryProvider;
+  SIMPLE_WEIGHTED_ECDSA: SimpleWeightedECDSAProvider
 };
 
 export type ValidatorProviderParamsMap = {
@@ -31,6 +34,7 @@ export type ValidatorProviderParamsMap = {
   ERC165_SESSION_KEY: ExtendedValidatorProviderParams<ERC165SessionKeyValidatorParams>;
   SESSION_KEY: ExtendedValidatorProviderParams<SessionKeyValidatorParams>;
   RECOVERY: RecoveryProviderParams;
+  SIMPLE_WEIGHTED_ECDSA: ExtendedValidatorProviderParams<SimpleWeightedECDSAValidatorParams>
 };
 
 export type ValidatorProviderMap = {

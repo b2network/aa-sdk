@@ -33,13 +33,15 @@ import type {
   ParamOperator,
 } from "./session-key-validator.js";
 import type { Abi, InferFunctionName, Narrow } from "viem";
+import type { SimpleWeightedECDSAValidator, SimpleWeightedECDSAValidatorParams } from "./simple-weighted-ecdsa-validator.js";
 
 export type SupportedValidators =
   | "ECDSA"
   | "KILL_SWITCH"
   | "ERC165_SESSION_KEY"
   | "SESSION_KEY"
-  | "RECOVERY";
+  | "RECOVERY"
+  | "SIMPLE_WEIGHTED_ECDSA";
 
 export type ValidatorTypeMap = {
   ECDSA: ECDSAValidator;
@@ -47,6 +49,7 @@ export type ValidatorTypeMap = {
   ERC165_SESSION_KEY: ERC165SessionKeyValidator;
   SESSION_KEY: SessionKeyValidator;
   RECOVERY: RecoveryValidator;
+  SIMPLE_WEIGHTED_ECDSA: SimpleWeightedECDSAValidator
 };
 
 export type ValidatorParamsMap = {
@@ -55,6 +58,7 @@ export type ValidatorParamsMap = {
   ERC165_SESSION_KEY: ERC165SessionKeyValidatorParams;
   SESSION_KEY: SessionKeyValidatorParams;
   RECOVERY: RecoveryValidatorParams;
+  SIMPLE_WEIGHTED_ECDSA: SimpleWeightedECDSAValidatorParams
 };
 
 export type ValidatorMap = {
