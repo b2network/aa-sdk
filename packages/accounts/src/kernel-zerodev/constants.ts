@@ -104,4 +104,5 @@ export const CHAIN_ID_TO_NODE: { [key: number]: string } = {
   59140: `https://linea-goerli.infura.io/v3/${INFURA_API_KEY}`,
   204: "https://opbnb.rpc.thirdweb.com/eed98c1f30120c0508f17c1f01d3102b",
   // 5611: 'opBnb-testnet',
+  31337: "http://127.0.0.1:8545",
 };

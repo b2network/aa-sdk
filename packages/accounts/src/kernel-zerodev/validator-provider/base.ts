@@ -1,4 +1,4 @@
-import { type Hex, type SendUserOperationResult } from "@alchemy/aa-core";
+import { type Hex, type SendUserOperationResult, type Address } from "@alchemy/aa-core";
 import { ZeroDevProvider, type ZeroDevProviderConfig } from "../provider.js";
 import type {
   KernelBaseValidator,
@@ -24,7 +24,7 @@ export type ValidatorProviderParamsOpts<P extends KernelBaseValidatorParams> = {
   accountConfig?: Omit<
     KernelSmartAccountParams,
     keyof ExtendedValidatorProviderParams<P>
-  >;
+  > & { implAddress?: Address };
   validatorConfig?: Omit<P, keyof ExtendedValidatorProviderParams<P>>;
 };
 
@@ -84,12 +84,14 @@ export abstract class ValidatorProvider<
           rpcClient: this.rpcClient,
           bundlerProvider,
           index: params.defaultProvider?.getAccount().getIndex(),
+          implAddress: params.opts?.accountConfig?.implAddress,
           ...params.opts?.accountConfig,
         })
     );
     if (shouldUsePaymaster) {
       let paymasterConfig = params.opts?.paymasterConfig ?? {
         policy: "VERIFYING_PAYMASTER",
+        baseURL: "http://127.0.0.1:14338"
       };
       paymasterConfig = {
         ...paymasterConfig,

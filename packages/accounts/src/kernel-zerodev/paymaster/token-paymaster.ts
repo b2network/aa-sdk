@@ -48,7 +48,7 @@ export class TokenPaymaster extends Paymaster {
     provider: ZeroDevProvider,
     protected paymasterConfig: PaymasterConfig<"TOKEN_PAYMASTER">
   ) {
-    super(provider);
+    super(provider, paymasterConfig.baseURL);
   }
   async getPaymasterAddress(
     paymasterProvider?: PaymasterAndBundlerProviders
@@ -210,10 +210,7 @@ export class TokenPaymaster extends Paymaster {
     if (!mainCall) {
       throw IncorrectCallDataForTokenPaymaster;
     }
-    const chainId = await getChainId(this.provider.getProjectId());
-    if (!chainId) {
-      throw new Error("ChainId not found");
-    }
+    const chainId = await this.provider.rpcClient.getChainId();
     const gasTokenAddress = getGasTokenAddress(
       this.paymasterConfig.gasToken,
       chainId
@@ -234,6 +231,7 @@ export class TokenPaymaster extends Paymaster {
         return;
       }
       const paymasterResp = await this.signUserOp({
+        chainId,
         userOp: struct,
         callData: struct.callData,
         gasTokenAddress,

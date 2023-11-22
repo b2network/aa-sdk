@@ -10,11 +10,9 @@ import {
   type PublicClient,
   type Transport,
   type HttpTransportConfig,
+  type EIP1193RequestFn,
+  type PublicRpcSchema,
 } from "viem";
-import type {
-  EIP1193RequestFn,
-  PublicRpcSchema,
-} from "viem/dist/types/types/eip1193";
 import type {
   BigNumberish,
   UserOperationEstimateGasResponse,

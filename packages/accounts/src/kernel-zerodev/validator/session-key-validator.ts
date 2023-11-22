@@ -37,12 +37,12 @@ import { MerkleTree } from "merkletreejs";
 import { Operation } from "../provider.js";
 import { getChainId } from "../api/index.js";
 import { fixSignedData } from "../utils.js";
-import type { GetAbiItemReturnType } from "viem/dist/types/utils/abi/getAbiItem.js";
 import { type AbiFunction } from "abitype";
 import type {
   CombinedArgs,
   GeneratePermissionFromArgsParameters,
 } from "./types.js";
+import type { GetAbiItemReturnType } from "viem/_types/utils/abi/getAbiItem.js";
 
 // We need to be able to serialize bigint to transmit session key over
 // the network.

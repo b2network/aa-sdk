@@ -1,17 +1,15 @@
 import type { Address } from "abitype";
 import type {
   Chain,
+  EIP1193RequestFn,
   FallbackTransport,
   Hash,
   Hex,
   HttpTransport,
   PublicClient,
+  PublicRpcSchema,
   Transport,
 } from "viem";
-import type {
-  EIP1193RequestFn,
-  PublicRpcSchema,
-} from "viem/dist/types/types/eip1193";
 import type {
   BigNumberish,
   UserOperationEstimateGasResponse,

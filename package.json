@@ -8,6 +8,7 @@
     "examples/*"
   ],
   "scripts": {
+    "bootstrap": "lerna bootstrap",
     "build": "lerna run build --ignore=alchemy-daapp",
     "build:examples": "lerna run build",
     "clean": "lerna run clean",

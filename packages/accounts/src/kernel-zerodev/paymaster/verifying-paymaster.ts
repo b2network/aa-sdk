@@ -10,17 +10,19 @@ import type { PaymasterAndBundlerProviders, PaymasterConfig } from "./types.js";
 export class VerifyingPaymaster extends Paymaster {
   constructor(
     provider: ZeroDevProvider,
-    _: PaymasterConfig<"VERIFYING_PAYMASTER">
+    config: PaymasterConfig<"VERIFYING_PAYMASTER">
   ) {
-    super(provider);
+    super(provider, config.baseURL);
   }
   async getPaymasterResponse(
     struct: UserOperationStruct,
     paymasterProvider?: PaymasterAndBundlerProviders,
     shouldOverrideFee?: boolean
   ): Promise<UserOperationStruct | undefined> {
+    const chainId = await this.provider.rpcClient.getChainId()
     const hexifiedUserOp = deepHexlify(await resolveProperties(struct));
     const paymasterResp = await this.signUserOp({
+      chainId,
       userOp: hexifiedUserOp,
       paymasterProvider,
       shouldOverrideFee,

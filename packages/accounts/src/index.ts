@@ -28,7 +28,10 @@ export type {
 } from "./kernel-zerodev/validator-provider/base.js";
 export type * from "./kernel-zerodev/validator-provider/types.js";
 export * from "./kernel-zerodev/validator-provider/index.js";
-export { ECDSAProvider as SimpleProvider } from "./kernel-zerodev/validator-provider/index.js";
+export {
+  ECDSAProvider as SimpleProvider,
+  SimpleWeightedECDSAProvider,
+} from "./kernel-zerodev/validator-provider/index.js";
 
 // Core exports
 export type * from "./kernel-zerodev/paymaster/types.js";
@@ -48,3 +51,7 @@ export * as constants from "./kernel-zerodev/constants.js";
 
 // Owner exports
 export * from "./kernel-zerodev/owner/index.js";
+
+export type { SignTypedDataParams, SmartAccountSigner } from "@alchemy/aa-core";
+
+export { default as getSCAAddress } from "./kernel-zerodev/utils/getSCAAddress.js";
