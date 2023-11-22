@@ -8249,11 +8249,6 @@ sigstore@^1.0.0, sigstore@^1.3.0, sigstore@^1.4.0:
     make-fetch-happen "^11.0.1"
     tuf-js "^1.1.3"
 
-sitka@^1.0.6:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/sitka/-/sitka-1.0.7.tgz#162d7ed995ffa4f7758e866a811ffe4ebf736d46"
-  integrity sha512-4bnB+BoFmZepf/72MzuNcKsU5dnHLfy/Ymm5BnfOaSp1VOovoj0BmREAnlRz6q3Bg/Oph5fBeLzTxG62YtgyLQ==
-
 slash@3.0.0, slash@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
@@ -8869,13 +8864,6 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==
-
-typescript-template@*:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/typescript-template/-/typescript-template-1.0.5.tgz#9c576df9c28002a9736c048c2cf28ab7f30b87b9"
-  integrity sha512-j+01BVN+beFVnW768Is/tJ8rqwEE+a1dqlDayuAcsEn56KkBgCqJgIfMk1t0Xg99VyaWmpE+AItNtnio+eeWEA==
-  dependencies:
-    sitka "^1.0.6"
 
 typescript@5.1:
   version "5.1.6"
