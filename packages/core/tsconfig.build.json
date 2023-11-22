@@ -3,6 +3,6 @@
   "exclude": ["node_modules", "**/*/__tests__", "vitest.config.ts"],
   "include": ["src"],
   "compilerOptions": {
-    "sourceMap": true
+    "sourceMap": false
   }
 }
