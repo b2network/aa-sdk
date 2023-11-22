@@ -1,25 +1,9 @@
-# ZeroDev SDK
-
-[![CI Tests](https://github.com/zerodevapp/sdk/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/zerodevapp/sdk/actions/workflows/main.yml)
-
----
-
-SDK for [ZeroDev](https://docs.zerodev.app/), based on [Kernel](https://github.com/zerodevapp/kernel).
+# B2Network AA-SDK
 
 ## Getting started
 
-Follow the instructions below to install the packages.
-
-via `yarn`
-
 ```bash
-yarn add @zerodev/sdk
-```
-
-via `npm`
-
-```bash
-npm i -s @zerodev/sdk
+yarn add @b2network/aa-sdk
 ```
 
 ## Example Usage to Interact with [Kernel Accounts](https://github.com/zerodevapp/kernel/blob/main/src/Kernel.sol)
