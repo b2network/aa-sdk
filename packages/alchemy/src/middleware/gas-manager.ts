@@ -3,7 +3,7 @@ import {
   resolveProperties,
   type ConnectedSmartAccountProvider,
   type UserOperationRequest,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import type { Address, Transport } from "viem";
 import type { ClientWithAlchemyMethods } from "./client.js";
 

@@ -6,7 +6,7 @@ import {
   type GasEstimatorMiddleware,
   type PaymasterAndDataMiddleware,
   type PublicErc4337Client,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import { Signer } from "@ethersproject/abstract-signer";
 import { hexlify } from "@ethersproject/bytes";
 import type { Deferrable } from "@ethersproject/properties";

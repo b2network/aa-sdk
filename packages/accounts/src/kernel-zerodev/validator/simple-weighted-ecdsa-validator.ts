@@ -6,7 +6,7 @@ import {
   type SmartAccountSigner,
   type UserOperationRequest,
   type SignTypedDataParams,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import { KernelBaseValidator, type KernelBaseValidatorParams } from "./base.js";
 import { encodeFunctionData, toBytes, encodeAbiParameters } from "viem";
 import { getChainId } from "../api/index.js";

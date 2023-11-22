@@ -6,7 +6,7 @@ import {
   type PaymasterAndDataMiddleware,
   type PublicErc4337Client,
   type SignTypedDataParams,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import {
   Signer,
   type TypedDataSigner,

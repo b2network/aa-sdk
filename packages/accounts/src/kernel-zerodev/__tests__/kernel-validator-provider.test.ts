@@ -2,7 +2,7 @@ import { createPublicClient, http, type Hex } from "viem";
 import { polygonMumbai } from "viem/chains";
 import { ECDSAValidatorAbi } from "../abis/ESCDAValidatorAbi.js";
 import { config } from "./config/index.js";
-import { LocalAccountSigner } from "@alchemy/aa-core";
+import { LocalAccountSigner } from "@b2network/aa-sdk-core";
 import { generatePrivateKey } from "viem/accounts";
 import { ECDSAProvider } from "../validator-provider/index.js";
 import { CHAIN_ID_TO_NODE } from "../constants.js";

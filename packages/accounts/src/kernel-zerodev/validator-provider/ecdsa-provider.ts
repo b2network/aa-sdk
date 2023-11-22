@@ -6,7 +6,7 @@ import {
   ECDSAValidator,
   type ECDSAValidatorParams,
 } from "../validator/ecdsa-validator.js";
-import { getChain } from "@alchemy/aa-core";
+import { getChain } from "@b2network/aa-sdk-core";
 import { getChainId } from "../api/index.js";
 import { polygonMumbai } from "viem/chains";
 

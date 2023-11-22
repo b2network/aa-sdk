@@ -12,7 +12,7 @@ import type {
   SignTypedDataParams,
   SmartAccountSigner,
   UserOperationCallData,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import { Signer, type TypedDataField } from "@ethersproject/abstract-signer";
 import { Wallet } from "@ethersproject/wallet";
 import type { SupportedGasToken } from "./paymaster/types.js";

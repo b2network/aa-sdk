@@ -1,7 +1,7 @@
 import {
   type PublicErc4337Client,
   type UserOperationRequest,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import type { Address, Hex } from "viem";
 
 export type ClientWithAlchemyMethods = PublicErc4337Client & {

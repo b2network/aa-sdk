@@ -22,7 +22,7 @@ import {
   SmartAccountProvider,
   type AccountMiddlewareFn,
   type UserOperationOverrides,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import {
   BUNDLER_URL,
   DEFAULT_SEND_TX_MAX_RETRIES,

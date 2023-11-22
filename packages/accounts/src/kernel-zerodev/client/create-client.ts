@@ -3,7 +3,7 @@ import {
   type PublicErc4337Client,
   type Erc337RpcSchema,
   type HttpTransport,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import { http, createPublicClient, type Chain, custom } from "viem";
 import { BUNDLER_URL, CHAIN_ID_TO_NODE } from "../constants.js";
 import type { PaymasterAndBundlerProviders } from "../paymaster/types.js";

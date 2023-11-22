@@ -1,4 +1,4 @@
-import type { UserOperationStruct } from "@alchemy/aa-core";
+import type { UserOperationStruct } from "@b2network/aa-sdk-core";
 import { toBytes, toHex } from "viem";
 import { packUserOp } from "./ERC4337-utils.js";
 

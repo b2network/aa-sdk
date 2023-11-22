@@ -8,7 +8,7 @@ import {
   http,
 } from "viem";
 import { polygonMumbai } from "viem/chains";
-import { LocalAccountSigner } from "@alchemy/aa-core";
+import { LocalAccountSigner } from "@b2network/aa-sdk-core";
 import { TEST_ERC20Abi } from "../abis/Test_ERC20Abi.js";
 import { ECDSAProvider } from "../validator-provider/index.js";
 import { CHAIN_ID_TO_NODE } from "../constants.js";

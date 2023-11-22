@@ -13,7 +13,7 @@ import {
   LocalAccountSigner,
   type Hex,
   type SmartAccountSigner,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import { getChainId } from "../api/index.js";
 import { polygonMumbai } from "viem/chains";
 import { SESSION_KEY_VALIDATOR_ADDRESS } from "../constants.js";

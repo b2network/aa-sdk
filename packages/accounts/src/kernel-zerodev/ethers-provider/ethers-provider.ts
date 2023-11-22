@@ -8,7 +8,7 @@ import {
   type GasEstimatorMiddleware,
   type PaymasterAndDataMiddleware,
   type PublicErc4337Client,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import { ZeroDevAccountSigner } from "./account-signer.js";
 import { JsonRpcProvider } from "@ethersproject/providers";
 import type { SupportedValidators } from "../validator/types.js";

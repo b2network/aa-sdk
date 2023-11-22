@@ -11,7 +11,7 @@ import {
   getChain,
   type Address,
   type SendUserOperationResult,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import {
   getChainId,
   getRecoveryData,

@@ -14,7 +14,7 @@ import {
 import { KILL_SWITCH_ACTION } from "../constants.js";
 import { KernelAccountAbi } from "../abis/KernelAccountAbi.js";
 import { ValidatorMode } from "../validator/base.js";
-import { LocalAccountSigner } from "@alchemy/aa-core";
+import { LocalAccountSigner } from "@b2network/aa-sdk-core";
 
 // [TODO] - Organize the test code properly
 describe("Kernel Kill Switch Provider Test", async () => {

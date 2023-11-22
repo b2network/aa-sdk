@@ -20,7 +20,7 @@ import {
   getChain,
   type SignTypedDataParams,
   wrapWith6492,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import {
   BUNDLER_URL,
   ENTRYPOINT_ADDRESS,

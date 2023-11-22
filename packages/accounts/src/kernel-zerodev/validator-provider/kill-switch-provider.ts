@@ -6,7 +6,7 @@ import {
   KillSwitchValidator,
   type KillSwitchValidatorParams,
 } from "../validator/kill-switch-validator.js";
-import { getChain } from "@alchemy/aa-core";
+import { getChain } from "@b2network/aa-sdk-core";
 import { getChainId } from "../api/index.js";
 import { polygonMumbai } from "viem/chains";
 import { KILL_SWITCH_VALIDATOR_ADDRESS } from "../constants.js";

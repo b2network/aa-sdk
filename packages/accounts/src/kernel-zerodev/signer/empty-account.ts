@@ -1,4 +1,4 @@
-import type { SignTypedDataParams, SmartAccountSigner } from "@alchemy/aa-core";
+import type { SignTypedDataParams, SmartAccountSigner } from "@b2network/aa-sdk-core";
 import { type Hex } from "viem";
 
 export class EmptyAccountSigner implements SmartAccountSigner {

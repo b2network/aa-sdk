@@ -1,5 +1,5 @@
 import { ECDSAValidator } from "../validator/ecdsa-validator.js";
-import { LocalAccountSigner } from "@alchemy/aa-core";
+import { LocalAccountSigner } from "@b2network/aa-sdk-core";
 import { config } from "./config/index.js";
 import type { PrivateKeyAccount } from "viem";
 import { ECDSA_VALIDATOR_ADDRESS } from "../constants.js";

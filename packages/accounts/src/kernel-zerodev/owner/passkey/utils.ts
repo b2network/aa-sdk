@@ -1,7 +1,7 @@
 import { browserInit, TurnkeyApi } from "@turnkey/http";
 import axios from "axios";
 import { API_URL } from "../../constants.js";
-import type { SignTypedDataParams } from "@alchemy/aa-core";
+import type { SignTypedDataParams } from "@b2network/aa-sdk-core";
 import { hashTypedData, signatureToHex, hashMessage } from "viem";
 
 browserInit({

@@ -1,4 +1,4 @@
-import { getChain, SimpleSmartContractAccount } from "@alchemy/aa-core";
+import { getChain, SimpleSmartContractAccount } from "@b2network/aa-sdk-core";
 import { Wallet } from "@ethersproject/wallet";
 import { Alchemy, Network } from "alchemy-sdk";
 import { EthersProviderAdapter } from "../src/provider-adapter.js";

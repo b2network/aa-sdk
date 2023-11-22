@@ -2,7 +2,7 @@ import {
   EntryPointAbi,
   type UserOperationRequest,
   type UserOperationStruct,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import type { NotPromise } from "./calc-pre-verification-gas.js";
 import {
   encodeAbiParameters,

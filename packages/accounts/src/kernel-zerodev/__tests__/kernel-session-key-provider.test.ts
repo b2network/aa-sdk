@@ -24,7 +24,7 @@ import {
   LocalAccountSigner,
   type Address,
   type SmartAccountSigner,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import {
   ParamOperator,
   getPermissionFromABI,

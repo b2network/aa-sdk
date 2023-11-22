@@ -16,7 +16,7 @@ import { ValidatorMode } from "../validator/base.js";
 import { Test_ERC721Abi } from "../abis/Test_ERC721Abi.js";
 import { ERC165SessionKeyProvider } from "../validator-provider/erc165-session-key-provider.js";
 import { TokenActionsAbi } from "../abis/TokenActionsAbi.js";
-import { LocalAccountSigner, type SmartAccountSigner } from "@alchemy/aa-core";
+import { LocalAccountSigner, type SmartAccountSigner } from "@b2network/aa-sdk-core";
 
 // [TODO] - Organize the test code properly
 describe("Kernel ERC165SessionKey Provider Test", async () => {

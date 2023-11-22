@@ -1,4 +1,4 @@
-import type { SignTypedDataParams, SmartAccountSigner } from "@alchemy/aa-core";
+import type { SignTypedDataParams, SmartAccountSigner } from "@b2network/aa-sdk-core";
 import { API_URL } from "../constants.js";
 import axios from "axios";
 

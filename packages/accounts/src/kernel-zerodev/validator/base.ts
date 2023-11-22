@@ -2,7 +2,7 @@ import {
   type SignTypedDataParams,
   type SmartAccountSigner,
   type UserOperationRequest,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import {
   concat,
   type Chain,

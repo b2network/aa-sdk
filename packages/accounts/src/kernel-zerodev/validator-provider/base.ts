@@ -1,4 +1,4 @@
-import { type Hex, type SendUserOperationResult, type Address } from "@alchemy/aa-core";
+import { type Hex, type SendUserOperationResult, type Address } from "@b2network/aa-sdk-core";
 import { ZeroDevProvider, type ZeroDevProviderConfig } from "../provider.js";
 import type {
   KernelBaseValidator,

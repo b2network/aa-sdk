@@ -1,6 +1,6 @@
 import { getWebAuthnAttestation } from "@turnkey/http";
 import axios from "axios";
-import type { SignTypedDataParams, SmartAccountSigner } from "@alchemy/aa-core";
+import type { SignTypedDataParams, SmartAccountSigner } from "@b2network/aa-sdk-core";
 import {
   abortWebauthn,
   base64UrlEncode,

@@ -52,6 +52,9 @@ export * as constants from "./kernel-zerodev/constants.js";
 // Owner exports
 export * from "./kernel-zerodev/owner/index.js";
 
-export type { SignTypedDataParams, SmartAccountSigner } from "@alchemy/aa-core";
+export type {
+  SignTypedDataParams,
+  SmartAccountSigner,
+} from "@b2network/aa-sdk-core";
 
 export { default as getSCAAddress } from "./kernel-zerodev/utils/getSCAAddress.js";

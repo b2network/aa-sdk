@@ -6,7 +6,7 @@ import {
   type UserOperationRequest,
   getChain,
   type SignTypedDataParams,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import {
   KernelBaseValidator,
   ValidatorMode,

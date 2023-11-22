@@ -6,7 +6,7 @@ import {
   resolveProperties,
   type BigNumberish,
   type UserOperationEstimateGasResponse,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import { ENTRYPOINT_ADDRESS } from "../constants.js";
 import { calcPreVerificationGas } from "../utils/calc-pre-verification-gas.js";
 import { type PaymasterAndBundlerProviders } from "../paymaster/types.js";

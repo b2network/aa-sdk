@@ -1,4 +1,4 @@
-import { type ConnectedSmartAccountProvider } from "@alchemy/aa-core";
+import { type ConnectedSmartAccountProvider } from "@b2network/aa-sdk-core";
 import type { ZeroDevProvider } from "../provider.js";
 import { Paymasters } from "../paymaster/index.js";
 import type { PaymasterConfig, PaymasterPolicy } from "../paymaster/types.js";

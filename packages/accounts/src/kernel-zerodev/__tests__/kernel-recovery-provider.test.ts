@@ -17,7 +17,7 @@ import {
   LocalAccountSigner,
   type Address,
   type SmartAccountSigner,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import {
   CHAIN_ID_TO_NODE,
   ECDSA_VALIDATOR_ADDRESS,

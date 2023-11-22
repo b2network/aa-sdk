@@ -3,7 +3,7 @@ import type {
   Hex,
   SignTypedDataParams,
   SmartAccountSigner,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 
 export class MockSigner implements SmartAccountSigner {
   getAddress(): Promise<Address> {

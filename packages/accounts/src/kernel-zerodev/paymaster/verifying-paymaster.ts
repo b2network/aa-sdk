@@ -2,7 +2,7 @@ import {
   type UserOperationStruct,
   deepHexlify,
   resolveProperties,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import { Paymaster } from "./base.js";
 import type { ZeroDevProvider } from "../provider.js";
 import type { PaymasterAndBundlerProviders, PaymasterConfig } from "./types.js";

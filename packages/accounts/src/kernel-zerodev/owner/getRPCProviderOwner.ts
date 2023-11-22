@@ -1,4 +1,4 @@
-import type { SignTypedDataParams, SmartAccountSigner } from "@alchemy/aa-core";
+import type { SignTypedDataParams, SmartAccountSigner } from "@b2network/aa-sdk-core";
 import { Web3Provider, type ExternalProvider } from "@ethersproject/providers";
 import { fixSignedData } from "../utils.js";
 import type { Hex } from "viem";

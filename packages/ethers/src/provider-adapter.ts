@@ -9,7 +9,7 @@ import {
   type HttpTransport,
   type PaymasterAndDataMiddleware,
   type PublicErc4337Client,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import { defineReadOnly } from "@ethersproject/properties";
 import { JsonRpcProvider } from "@ethersproject/providers";
 import { AccountSigner } from "./account-signer.js";

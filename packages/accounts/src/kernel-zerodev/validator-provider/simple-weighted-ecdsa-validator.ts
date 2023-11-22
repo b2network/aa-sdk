@@ -2,7 +2,7 @@ import {
   ValidatorProvider,
   type ExtendedValidatorProviderParams,
 } from "./base.js";
-import { getChain } from "@alchemy/aa-core";
+import { getChain } from "@b2network/aa-sdk-core";
 import { localhost } from "viem/chains";
 import {
   SimpleWeightedECDSAValidator,

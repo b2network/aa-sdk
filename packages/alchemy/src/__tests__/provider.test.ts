@@ -2,7 +2,7 @@ import {
   SimpleSmartContractAccount,
   type BatchUserOperationCallData,
   type SimpleSmartAccountOwner,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import { toHex } from "viem";
 import { mnemonicToAccount } from "viem/accounts";
 import { polygonMumbai } from "viem/chains";

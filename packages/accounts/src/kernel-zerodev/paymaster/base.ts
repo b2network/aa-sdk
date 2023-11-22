@@ -4,7 +4,7 @@ import {
   type PromiseOrValue,
   type UserOperationStruct,
   resolveProperties,
-} from "@alchemy/aa-core";
+} from "@b2network/aa-sdk-core";
 import axios from "axios";
 import { ENTRYPOINT_ADDRESS } from "../constants.js";
 import type { ZeroDevProvider } from "../provider.js";

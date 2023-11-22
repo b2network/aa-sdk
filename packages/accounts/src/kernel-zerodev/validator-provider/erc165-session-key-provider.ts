@@ -6,7 +6,7 @@ import {
   ERC165SessionKeyValidator,
   type ERC165SessionKeyValidatorParams,
 } from "../validator/erc165-session-key-validator.js";
-import { getChain } from "@alchemy/aa-core";
+import { getChain } from "@b2network/aa-sdk-core";
 import { getChainId } from "../api/index.js";
 import { polygonMumbai } from "viem/chains";
 import { ERC165_SESSION_KEY_VALIDATOR_ADDRESS } from "../constants.js";
