@@ -21,8 +21,16 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PUBLISH_PAT }}
+      - name: Configure Git User
+        run: |
+          git config --global user.email "ci@b2network"
+          git config --global user.name "ci-$GITHUB_ACTOR"
       - name: Setup .npmrc file to publish to GitHub Packages
         uses: actions/setup-node@v3
         with:
@@ -31,11 +39,5 @@ jobs:
           scope: '@b2network'
       - name: Install modules
         run: yarn install
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build 
-        run: yarn bootstrap && yarn build
-      - name: Publish to GitHub Packages
-        run: npm publish @b2network/aa-sdk
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and Publish to GitHub Packages
+        run: yarn lerna publish patch --yes
