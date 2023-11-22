@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.0.0 (2023-11-22)
+
+### Bug Fixes
+
+- fix the version in the ethers project to match [@alchemy](https://github.com/alchemy) ([2a879a9](https://github.com/alchemyplatform/aa-sdk/commit/2a879a9a13298df7a979c592bbc32c18e6b74d82))
+- rename folders and update readme to reference correct package names ([8bbcaf7](https://github.com/alchemyplatform/aa-sdk/commit/8bbcaf76d2a9a945b30ce09fd2928a4a5eefb4be))
+- types changed when updating to latest viem ([0aec96d](https://github.com/alchemyplatform/aa-sdk/commit/0aec96d184b5bcc3787ce9123260cf287f27f037))
+
+### Features
+
+- add alchemy sub-package ([#22](https://github.com/alchemyplatform/aa-sdk/issues/22)) ([e7fc1aa](https://github.com/alchemyplatform/aa-sdk/commit/e7fc1aa93ebd57237009d3aa688d8c167f240aad))
+- add support for batching transactions in a userop ([#7](https://github.com/alchemyplatform/aa-sdk/issues/7)) ([79d63a7](https://github.com/alchemyplatform/aa-sdk/commit/79d63a79d26d6501d74dbf90de6c9a1158d931de))
+- add support for the new alchemy paymaster endpoint ([#14](https://github.com/alchemyplatform/aa-sdk/issues/14)) ([3fac515](https://github.com/alchemyplatform/aa-sdk/commit/3fac5152075b07ab91dea393e366b667149a3e23))
+- pulled updates from upstream alchemy ([f93b0e7](https://github.com/alchemyplatform/aa-sdk/commit/f93b0e725d66ec57ff2e012169a60e52b9b334c7))
+
 # 0.1.0-alpha.23 (2023-08-14)
 
 ### Features
