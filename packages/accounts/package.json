@@ -1,6 +1,6 @@
 {
   "name": "@b2network/aa-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A collection of ERC-4337 compliant smart contract account interfaces",
   "license": "MIT",
   "private": false,
@@ -45,11 +45,11 @@
     "@turnkey/viem": "^0.2.4",
     "@types/lodash": "^4.14.201",
     "typescript": "^5.0.4",
-    "typescript-template": "*",
+    "typescript-template": "^1.0.1",
     "vitest": "^0.31.0"
   },
   "dependencies": {
-    "@b2network/aa-sdk-core": "^1.0.0",
+    "@b2network/aa-sdk-core": "^1.0.1",
     "axios": "^1.4.0",
     "lodash": "^4.17.21",
     "merkletreejs": "^0.3.10",
