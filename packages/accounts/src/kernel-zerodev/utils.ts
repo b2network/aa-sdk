@@ -3,7 +3,6 @@ import {
   fromBytes,
   toBytes,
   type Hex,
-  type WalletClient,
   toHex,
   isHex,
   hexToSignature,
@@ -65,27 +64,6 @@ export function getGasTokenAddress(
   }
   return gasTokenChainAddresses[gasToken][chainId] || undefined;
 }
-
-export const convertWalletClientToAccountSigner = (
-  client: WalletClient
-): SmartAccountSigner => {
-  return {
-    getAddress: async () =>
-      Promise.resolve((await client.getAddresses())[0] as `0x${string}`),
-    signMessage: async (message: Uint8Array | string) =>
-      (await client.signMessage({
-        account: client.account!,
-        message:
-          typeof message === "string"
-            ? message
-            : {
-                raw: message,
-              },
-      })) as `0x${string}`,
-    signTypedData: async (params: SignTypedDataParams) =>
-      await client.signTypedData({ ...params, account: client.account! }),
-  };
-};
 
 export const isWallet = (signer: any): signer is Wallet =>
   signer && signer._signTypedData !== undefined;

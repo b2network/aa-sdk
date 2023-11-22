@@ -22,12 +22,14 @@ export interface SimpleWeightedECDSAValidatorParams
   extends KernelBaseValidatorParams {
   selectedSigner: SmartAccountSigner;
   guardians: Address[];
+  ids: Hex[];
   weights: number[];
   threshold: number;
 }
 
 export class SimpleWeightedECDSAValidator extends KernelBaseValidator {
   protected guardians: Address[];
+  protected ids: Hex[];
   protected selectedSigner: SmartAccountSigner;
   protected weights: number[];
   protected totalWeight: number;
@@ -37,10 +39,11 @@ export class SimpleWeightedECDSAValidator extends KernelBaseValidator {
     super(params);
     this.selectedSigner = params.selectedSigner;
     this.guardians = params.guardians;
+    this.ids = params.ids;
     this.weights = params.weights;
     this.totalWeight = sum(params.weights);
     this.threshold = params.threshold;
-}
+  }
 
   public static async init(
     params: SimpleWeightedECDSAValidatorParams
@@ -60,6 +63,7 @@ export class SimpleWeightedECDSAValidator extends KernelBaseValidator {
 
   encodeEnableData(
     guardians: Address[],
+    ids: Hex[],
     weights: number[],
     threshold: number
   ): Hex {
@@ -69,18 +73,26 @@ export class SimpleWeightedECDSAValidator extends KernelBaseValidator {
           type: "address[]",
         },
         {
+          type: "bytes32[]",
+        },
+        {
           type: "uint24[]",
         },
         {
           type: "uint24",
         },
       ],
-      [guardians, weights, threshold]
+      [guardians, ids, weights, threshold]
     );
   }
 
   async getEnableData(): Promise<Hex> {
-    return this.encodeEnableData(this.guardians, this.weights, this.threshold);
+    return this.encodeEnableData(
+      this.guardians,
+      this.ids,
+      this.weights,
+      this.threshold
+    );
   }
 
   encodeEnable(enableData: Hex): Hex {
@@ -118,18 +130,19 @@ export class SimpleWeightedECDSAValidator extends KernelBaseValidator {
     });
 
     const getNextGuardian = async (curr: Address) => {
-      const [kernel, weight, nextGuardian] = await this.publicClient!.readContract({
-        abi: SimpleWeightedValidatorAbi,
-        address: this.validatorAddress,
-        functionName: "guardianStorage",
-        args: [curr]
-      })
+      const [kernel, weight, nextGuardian] =
+        await this.publicClient!.readContract({
+          abi: SimpleWeightedValidatorAbi,
+          address: this.validatorAddress,
+          functionName: "guardianStorage",
+          args: [curr],
+        });
       return {
         kernel,
         weight,
-        nextGuardian
-      }
-    }
+        nextGuardian,
+      };
+    };
 
     const [, threshold, firstGuardian] = await this.publicClient.readContract({
       abi: SimpleWeightedValidatorAbi,
@@ -138,20 +151,26 @@ export class SimpleWeightedECDSAValidator extends KernelBaseValidator {
       args: [kernelAccountAddress],
     });
 
-    const guardians: Address[] = []
-    const weights: number[] = []
-    let currGuardian = firstGuardian
+    const guardians: Address[] = [];
+    const weights: number[] = [];
+    let currGuardian = firstGuardian;
     while (currGuardian !== kernelAccountAddress) {
-      const { weight, nextGuardian } = await getNextGuardian(currGuardian)
-      guardians.push(currGuardian)
-      weights.push(weight)
-      currGuardian = nextGuardian
-    } 
+      const { weight, nextGuardian } = await getNextGuardian(currGuardian);
+      guardians.push(currGuardian);
+      weights.push(weight);
+      currGuardian = nextGuardian;
+    }
 
-    const currEnabledData = await this.getEnableData();
     return (
-      execDetail.validator.toLowerCase() === this.validatorAddress.toLowerCase() &&
-      currEnabledData.toLocaleLowerCase() === this.encodeEnableData(guardians, weights, threshold)
+      execDetail.validator.toLowerCase() ===
+        this.validatorAddress.toLowerCase() &&
+      this.encodeEnableData(guardians, [], weights, threshold).toLowerCase() ===
+        this.encodeEnableData(
+          this.guardians,
+          [],
+          this.weights,
+          this.threshold
+        ).toLowerCase()
     );
   }
 

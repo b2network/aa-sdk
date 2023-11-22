@@ -24,6 +24,7 @@ export class SimpleWeightedECDSAProvider extends ValidatorProvider<
       projectId: params.projectId,
       selectedSigner: params.selectedSigner,
       guardians: params.guardians,
+      ids: params.ids,
       weights: params.weights,
       threshold: params.threshold,
       chain,
