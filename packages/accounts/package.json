@@ -13,12 +13,9 @@
   "files": [
     "passkey",
     "dist",
-    "src/**/*.ts",
     "!dist/**/*.tsbuildinfo",
     "!vitest.config.ts",
-    "!.env",
-    "!src/**/*.test.ts",
-    "!src/__tests__/**/*"
+    "!.env"
   ],
   "exports": {
     ".": {
@@ -52,8 +49,7 @@
     "vitest": "^0.31.0"
   },
   "dependencies": {
-    "@alchemy/aa-core": "0.1.0-alpha.23",
-    "@alchemy/aa-ethers": "0.1.0-alpha.23",
+    "@b2network/aa-sdk-core": "^1.0.0",
     "axios": "^1.4.0",
     "lodash": "^4.17.21",
     "merkletreejs": "^0.3.10",
