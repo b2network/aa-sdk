@@ -5,7 +5,7 @@ import {
   type AbiFunction,
   type ExtractAbiFunction,
 } from "abitype";
-import { type Pretty } from "abitype/src/types.js";
+import { type Prettify } from "abitype/src/types.js";
 import type {
   ECDSAValidator,
   ECDSAValidatorParams,
@@ -75,7 +75,7 @@ export type { ParamRules, Permission, SessionKeyData, SessionKeyParams };
 export type AbiParametersToPrimitiveTypes<
   TAbiParameters extends readonly AbiParameter[],
   TAbiParameterKind extends AbiParameterKind = AbiParameterKind
-> = Pretty<{
+> = Prettify<{
   [K in keyof TAbiParameters]: AbiParameterToPrimitiveType<
     TAbiParameters[K],
     TAbiParameterKind
@@ -84,7 +84,7 @@ export type AbiParametersToPrimitiveTypes<
 
 export type AbiParametersToConditons<
   TAbiParameters extends readonly AbiParameter[]
-> = Pretty<{
+> = Prettify<{
   [K in keyof TAbiParameters]: ParamOperator;
 }>;
 
