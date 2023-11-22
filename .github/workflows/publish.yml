@@ -2,8 +2,8 @@ name: Release & Publish
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - b2-main
 
 permissions: write-all
 
