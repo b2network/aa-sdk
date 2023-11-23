@@ -1,8 +1,0 @@
-{
-  "extends": "typescript-template/build.json",
-  "exclude": ["node_modules", "**/*/__tests__", "vitest.config.ts"],
-  "include": ["src"],
-  "compilerOptions": {
-    "sourceMap": false
-  }
-}
