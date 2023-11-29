@@ -21,12 +21,11 @@ import {
 import { KernelAccountAbi } from "../abis/KernelAccountAbi.js";
 import {
   BUNDLER_URL,
-  CHAIN_ID_TO_NODE,
   ECDSA_VALIDATOR_ADDRESS,
   ENTRYPOINT_ADDRESS,
   KERNEL_IMPL_ADDRESS,
 } from "../constants.js";
-import { polygonMumbai } from "viem/chains";
+import { foundry } from "viem/chains";
 
 export enum ValidatorMode {
   sudo = "0x00000000",
@@ -72,6 +71,9 @@ export abstract class KernelBaseValidator {
   publicClient?: PublicClient<Transport, Chain>;
 
   constructor(params: KernelBaseValidatorParams) {
+    if (!params.chain?.rpcUrls?.public?.http?.length) {
+      throw new Error("chain must have rpcUrls.public.http");
+    }
     this.projectId = params.projectId;
     this.validatorAddress = params.validatorAddress ?? ECDSA_VALIDATOR_ADDRESS;
     this.mode = params.mode ?? ValidatorMode.sudo;
@@ -84,8 +86,8 @@ export abstract class KernelBaseValidator {
     this.chain = params.chain;
     this.rpcUrl = params.rpcUrl ?? BUNDLER_URL;
     this.publicClient = createPublicClient({
-      transport: http(CHAIN_ID_TO_NODE[this.chain?.id ?? polygonMumbai.id]),
-      chain: this.chain ?? polygonMumbai,
+      transport: http(this.chain.rpcUrls.public.http[0]),
+      chain: this.chain ?? foundry,
     });
   }
 
