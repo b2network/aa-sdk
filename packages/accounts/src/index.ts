@@ -42,8 +42,6 @@ export { ZeroDevProvider, Operation } from "./kernel-zerodev/provider.js";
 // Utils exports
 export * from "./kernel-zerodev/utils.js";
 export { getChainId } from "./kernel-zerodev/api/index.js";
-export { ZeroDevEthersProvider } from "./kernel-zerodev/ethers-provider/ethers-provider.js";
-export { ZeroDevAccountSigner } from "./kernel-zerodev/ethers-provider/account-signer.js";
 export { EmptyAccountSigner } from "./kernel-zerodev/signer/empty-account.js";
 
 // Constant exports
