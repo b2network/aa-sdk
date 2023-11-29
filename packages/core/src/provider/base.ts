@@ -93,14 +93,17 @@ export class SmartAccountProvider<
   minPriorityFeePerBid: bigint;
   rpcClient: PublicErc4337Client<Transport>;
 
+  entryPointAddress: Address
+
   constructor(
     rpcProvider: string | PublicErc4337Client<TTransport>,
-    protected entryPointAddress: Address,
+    entryPointAddress: Address,
     protected chain: Chain,
     readonly account?: BaseSmartContractAccount<TTransport>,
     opts?: SmartAccountProviderOpts
   ) {
     super();
+    this.entryPointAddress = entryPointAddress;
 
     this.txMaxRetries = opts?.txMaxRetries ?? 5;
     this.txRetryIntervalMs = opts?.txRetryIntervalMs ?? 2000;

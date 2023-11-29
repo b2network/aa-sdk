@@ -7,7 +7,6 @@ import {
   type BigNumberish,
   type UserOperationEstimateGasResponse,
 } from "@b2network/aa-sdk-core";
-import { ENTRYPOINT_ADDRESS } from "../constants.js";
 import { calcPreVerificationGas } from "../utils/calc-pre-verification-gas.js";
 import { type PaymasterAndBundlerProviders } from "../paymaster/types.js";
 
@@ -77,7 +76,7 @@ export const withZeroDevGasEstimator = (
     let userOpGasEstimates: UserOperationEstimateGasResponse | undefined;
     userOpGasEstimates = await provider.rpcClient.estimateUserOperationGas(
       request,
-      ENTRYPOINT_ADDRESS
+      provider.entryPointAddress
     );
     const { preVerificationGas, verificationGasLimit, callGasLimit } =
       userOpGasEstimates;
@@ -105,7 +104,7 @@ export const estimateCreationGas = async (
   const deployerAddress = initCode.substring(0, 42) as Hex;
   const deployerCallData = ("0x" + initCode.substring(42)) as Hex;
   return await provider.rpcClient.estimateGas({
-    account: ENTRYPOINT_ADDRESS,
+    account: provider.entryPointAddress,
     to: deployerAddress,
     data: deployerCallData,
   });
