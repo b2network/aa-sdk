@@ -87,13 +87,13 @@ const provider = SimpleWeightedECDSAProvider.init({
   },
 })
 
-const { hash } = await ecdsaProvider.sendUserOperation({
+const { hash } = await provider.sendUserOperation({
   target: "0xtarget",
   data: "0xcallData",
   value: 0n
 });
 
-await ecdsaProvider.waitForUserOperationTransaction(
+await provider.waitForUserOperationTransaction(
   result.hash as Hex
 );
 ```
@@ -101,7 +101,7 @@ await ecdsaProvider.waitForUserOperationTransaction(
 ### Batch Transactions
 
 ```ts
-const { hash } = await ecdsaProvider.sendUserOperation([
+const { hash } = await provider.sendUserOperation([
   {
     target: "0xtarget1",
     data: "0xcallData1",
