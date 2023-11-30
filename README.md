@@ -84,6 +84,10 @@ const provider = SimpleWeightedECDSAProvider.init({
       entryPointAddress: ENTRYPOINT_ADDRESS,
       validatorAddress: SW_VALIDATOR_ADDRESS,
     },
+    paymasterConfig: {
+      policy: "VERIFYING_PAYMASTER",
+      baseURL: PM_BASE_URL,
+    }
   },
 })
 
