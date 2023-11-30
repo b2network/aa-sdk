@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.0.3 (2023-11-30)
+
+### Bug Fixes
+
+- fix missing dependencies ([5b6799a](https://github.com/b2network/aa-sdk/commit/5b6799ae42650dc48c176cfdab27b464ccdbc45b))
+
 ## 1.0.2 (2023-11-22)
 
 **Note:** Version bump only for package typescript-template
