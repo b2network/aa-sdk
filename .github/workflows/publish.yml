@@ -11,7 +11,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     env:
-      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -24,8 +24,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@b2network'
       - name: Install modules
         run: yarn install --frozen-lockfile
       - name: Build and Publish to GitHub Packages
