@@ -10,6 +10,11 @@ import { ENTRYPOINT_ADDRESS } from "../constants.js";
 import type { ZeroDevProvider } from "../provider.js";
 import { hexifyUserOp } from "../utils/ERC4337-utils.js";
 import type { PaymasterAndBundlerProviders } from "./types.js";
+import fetchAdapter from '@vespaiach/axios-fetch-adapter';
+
+if (typeof fetch === 'function') {
+  axios.defaults.adapter = fetchAdapter
+}
 
 export abstract class Paymaster {
   baseURL: string
