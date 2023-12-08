@@ -1,5 +1,3 @@
-# ZeroDev SDK
+# B2Network AA-SDK
 
-SDK for [ZeroDev](https://docs.zerodev.app/), based on [Kernel](https://github.com/zerodevapp/kernel).
-
-Documentation available [here](https://github.com/zerodevapp/sdk#zerodev-sdk).
+SDK to interact with AA-enabled SCA in B2 Network, forked from for [ZeroDev](https://github.com/zerodevapp/sdk).
