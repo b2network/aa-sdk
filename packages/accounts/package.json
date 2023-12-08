@@ -1,6 +1,6 @@
 {
   "name": "@b2network/aa-sdk",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A collection of ERC-4337 compliant smart contract account interfaces",
   "license": "MIT",
   "private": false,
@@ -51,11 +51,11 @@
     "@vespaiach/axios-fetch-adapter": "^0.3.1",
     "abitype": "^0.10.3",
     "typescript": "^5.0.4",
-    "typescript-template": "^1.0.3",
+    "typescript-template": "^1.0.4",
     "vitest": "^0.31.0"
   },
   "dependencies": {
-    "@b2network/aa-sdk-core": "^1.0.3",
+    "@b2network/aa-sdk-core": "^1.0.4",
     "@ethersproject/abstract-signer": "^5.7.0",
     "@ethersproject/providers": "^5.7.2",
     "@ethersproject/wallet": "^5.7.0",
