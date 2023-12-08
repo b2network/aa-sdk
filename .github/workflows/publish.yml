@@ -26,5 +26,7 @@ jobs:
           node-version: '18.x'
       - name: Install modules
         run: yarn install --frozen-lockfile
+      - name: Bootstrap lerna
+        run: yarn lerna bootstrap
       - name: Build and Publish to GitHub Packages
         run: yarn lerna publish patch --yes
