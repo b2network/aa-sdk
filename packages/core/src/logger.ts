@@ -7,7 +7,7 @@ export enum LogLevel {
 }
 
 export class Logger {
-  static logLevel: LogLevel = LogLevel.DEBUG;
+  static logLevel: LogLevel = LogLevel.WARN;
   static logFilter?: string;
 
   static setLogLevel(logLevel: LogLevel) {
