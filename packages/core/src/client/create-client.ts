@@ -20,7 +20,6 @@ import type {
   UserOperationRequest,
   UserOperationResponse,
 } from "../types.js";
-import { VERSION } from "../version.js";
 import type { Erc337RpcSchema, PublicErc4337Client } from "./types.js";
 
 export const createPublicErc4337FromClient: <
@@ -138,7 +137,6 @@ export const createPublicErc4337Client = ({
           ...fetchOptions,
           headers: {
             ...fetchOptions?.headers,
-            "Alchemy-AA-Sdk-Version": VERSION,
           },
         },
       }),
