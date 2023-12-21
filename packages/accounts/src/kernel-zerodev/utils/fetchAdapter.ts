@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import axios from 'axios';
 import settle from 'axios/lib/core/settle';
 import buildURL from 'axios/lib/helpers/buildURL';

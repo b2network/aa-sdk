@@ -14,7 +14,7 @@ import type { PaymasterAndBundlerProviders } from "./types.js";
 import fetchAdapter from '../utils/fetchAdapter.js';
 
 if (typeof fetch === 'function') {
-  axios.defaults.adapter = fetchAdapter
+  axios.defaults.adapter = fetchAdapter as any
 }
 
 export abstract class Paymaster {
