@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.0.13 (2023-12-22)
+
+### Bug Fixes
+
+- **vendor:** fix typing issues in fetchAdapter ([28f6ef1](https://github.com/b2network/aa-sdk/commit/28f6ef134f723881e5fb5aa80fde5aea3282fc78))
+
 ## 1.0.12 (2023-12-21)
 
 **Note:** Version bump only for package typescript-template
