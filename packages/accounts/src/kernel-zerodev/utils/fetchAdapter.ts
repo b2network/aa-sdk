@@ -1,17 +1,15 @@
-// @ts-nocheck
-
-import axios from 'axios';
-import settle from 'axios/lib/core/settle';
-import buildURL from 'axios/lib/helpers/buildURL';
-import buildFullPath from 'axios/lib/core/buildFullPath';
-import { isUndefined, isStandardBrowserEnv, isFormData } from 'axios/lib/utils';
+import * as axios from 'axios';
+const settle = require('axios/lib/core/settle.js');
+const buildURL = require('axios/lib/helpers/buildURL.js');
+const buildFullPath = require('axios/lib/core/buildFullPath.js');
+const { isUndefined, isStandardBrowserEnv, isFormData } = require('axios/lib/utils.js');
 
 /**
  * - Create a request object
  * - Get response body
  * - Check if timeout
  */
-export default async function fetchAdapter(config) {
+export default async function fetchAdapter(config: any) {
     const request = createRequest(config);
     const promiseChain = [getResponse(request, config)];
 
@@ -45,7 +43,7 @@ export default async function fetchAdapter(config) {
  * Fetch API stage two is to get response body. This funtion tries to retrieve
  * response body based on response's type
  */
-async function getResponse(request, config) {
+async function getResponse(request: any, config: any) {
     let stageOne;
     try {
         stageOne = await fetch(request);
@@ -53,7 +51,7 @@ async function getResponse(request, config) {
         return createError('Network Error', config, 'ERR_NETWORK', request);
     }
 
-    const response = {
+    const response: any = {
         ok: stageOne.ok,
         status: stageOne.status,
         statusText: stageOne.statusText,
@@ -88,7 +86,7 @@ async function getResponse(request, config) {
 /**
  * This function will create a Request object based on configuration's axios
  */
-function createRequest(config) {
+function createRequest(config: any) {
     const headers = new Headers(config.headers);
 
     // HTTP basic authentication
@@ -99,7 +97,7 @@ function createRequest(config) {
     }
 
     const method = config.method.toUpperCase();
-    const options = {
+    const options: any = {
         headers: headers,
         method,
     };
@@ -159,8 +157,9 @@ function createRequest(config) {
  * @param {Object} [response] The response.
  * @returns {Error} The created error.
  */
-function createError(message, config, code, request, response) {
+function createError(message: string, config: any, code: string, request: any, response?: any) {
     if (axios.AxiosError && typeof axios.AxiosError === 'function') {
+        // @ts-ignore
         return new axios.AxiosError(message, axios.AxiosError[code], config, request, response);
     }
 
@@ -184,7 +183,7 @@ function createError(message, config, code, request, response) {
  * @param {Object} [response] The response.
  * @returns {Error} The error.
  */
-function enhanceError(error, config, code, request, response) {
+function enhanceError(error: any, config: any, code: string, request: any, response: any) {
   error.config = config;
   if (code) {
     error.code = code;
