@@ -1,8 +1,12 @@
 import * as axios from 'axios';
-const settle = require('axios/lib/core/settle.js');
-const buildURL = require('axios/lib/helpers/buildURL.js');
-const buildFullPath = require('axios/lib/core/buildFullPath.js');
-const { isUndefined, isStandardBrowserEnv, isFormData } = require('axios/lib/utils.js');
+// @ts-ignore
+import settle from 'axios/lib/core/settle.js';
+// @ts-ignore
+import buildURL from 'axios/lib/helpers/buildURL.js';
+// @ts-ignore
+import buildFullPath from 'axios/lib/core/buildFullPath.js';
+// @ts-ignore
+import { isUndefined, isStandardBrowserEnv, isFormData } from 'axios/lib/utils.js';
 
 /**
  * - Create a request object
