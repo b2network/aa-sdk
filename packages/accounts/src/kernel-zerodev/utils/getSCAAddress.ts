@@ -1,4 +1,5 @@
-import { type Address, type Hex, type PublicClient, hexToBigInt, keccak256, parseAbi, zeroAddress } from "viem";
+import axios from "axios";
+import { type Address, type Hex, type PublicClient, hexToBigInt, keccak256, parseAbi, zeroAddress, getAddress } from "viem";
 import { readContract } from 'viem/contract';
 
 const SCARegistryABI = parseAbi([
@@ -18,12 +19,12 @@ async function getDeterministicAddress(publicClient: PublicClient, factoryAddres
   })
 }
 
-export default async (
+async function computeSCAAddress(
   publicClient: PublicClient,
   scaRegistryAddress: Address,
   factoryAddress: Address,
   owner: string
-): Promise<Address> => {
+): Promise<Address> {
   const ownerHash = keccak256(Buffer.from(owner.toLowerCase(), 'utf-8'))
   const targetAddress = await readContract(publicClient, {
     abi: SCARegistryABI,
@@ -36,3 +37,21 @@ export default async (
   }
   return targetAddress;
 };
+
+// eslint-disable-next-line import/no-anonymous-default-export
+export default async (
+  publicClient: PublicClient,
+  scaRegistryAddress: Address,
+  factoryAddress: Address,
+  owner: string
+) => {
+  try {
+    const { data } = await axios.get(`https://aa-registry-test.bsquared.network/1002/${owner}`)
+    const result = getAddress(data.result)    
+    console.log('fetched SCA address from cache:', result);
+    return result
+  } catch (err) {
+    console.error('failed to fetch SCA address from cache:', err);
+  }
+  return computeSCAAddress(publicClient, scaRegistryAddress, factoryAddress, owner);
+}
