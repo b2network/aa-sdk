@@ -194,6 +194,9 @@ export const getFeeData = async (
         : maxPriorityFeePerGas;
     maxFeePerGas =
       block.baseFeePerGas * BigInt(2) + (maxPriorityFeePerGas ?? 0);
+  } else {
+    maxFeePerGas = gasPrice;
+    maxPriorityFeePerGas = gasPrice;
   }
 
   return { maxFeePerGas, maxPriorityFeePerGas };
