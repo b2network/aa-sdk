@@ -22,6 +22,8 @@ export const KILL_SWITCH_VALIDATOR_ADDRESS =
 export const KILL_SWITCH_ACTION = "0x3f38e479304c7F18F988269a1bDa7d646bd48243";
 export const DUMMY_ECDSA_SIG =
   "0xfffffffffffffffffffffffffffffff0000000000000000000000000000000007aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa1c";
+export const DUMMY_SW_ECDSA_SIG =
+  "0x00fffffffffffffffffffffffffffffff0000000000000000000000000000000007aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa1c0000000000000000000000000000000000000000";
 export const ERC165_SESSION_KEY_VALIDATOR_ADDRESS =
   "0xe149290800De29D4b0BF9dB82c508255D81902E6";
 export const TOKEN_ACTION = "0x2087C7FfD0d0DAE80a00EE74325aBF3449e0eaf1";

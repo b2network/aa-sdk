@@ -10,7 +10,7 @@ import {
 import { KernelBaseValidator, type KernelBaseValidatorParams } from "./base.js";
 import { encodeFunctionData, toBytes, encodeAbiParameters } from "viem";
 import { getChainId } from "../api/index.js";
-import { DUMMY_ECDSA_SIG } from "../constants.js";
+import { DUMMY_SW_ECDSA_SIG } from "../constants.js";
 import { KernelAccountAbi } from "../abis/KernelAccountAbi.js";
 import { fixSignedData } from "../utils.js";
 import { SimpleWeightedValidatorAbi } from "../abis/SimpleWeightedValidatorAbi.js";
@@ -112,7 +112,7 @@ export class SimpleWeightedECDSAValidator extends KernelBaseValidator {
   }
 
   async getDummyUserOpSignature(): Promise<Hex> {
-    return DUMMY_ECDSA_SIG;
+    return DUMMY_SW_ECDSA_SIG;
   }
 
   async isPluginEnabled(
