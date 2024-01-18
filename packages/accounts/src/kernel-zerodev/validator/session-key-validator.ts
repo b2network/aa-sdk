@@ -42,7 +42,7 @@ import type {
   CombinedArgs,
   GeneratePermissionFromArgsParameters,
 } from "./types.js";
-import type { GetAbiItemReturnType } from "viem/utils/abi/getAbiItem.js";
+import type { GetAbiItemReturnType } from "viem/_types/utils/abi/getAbiItem.js";
 
 // We need to be able to serialize bigint to transmit session key over
 // the network.
