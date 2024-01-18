@@ -54,5 +54,3 @@ export type {
   SignTypedDataParams,
   SmartAccountSigner,
 } from "@b2network/aa-sdk-core";
-
-export { default as getSCAAddress } from "./kernel-zerodev/utils/getSCAAddress.js";
