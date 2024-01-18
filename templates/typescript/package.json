@@ -1,6 +1,6 @@
 {
   "name": "typescript-template",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "tsconfig base",
   "private": "false",
   "main": "index.js",
