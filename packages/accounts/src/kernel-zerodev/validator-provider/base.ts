@@ -58,8 +58,7 @@ export abstract class ValidatorProvider<
     validator: KernelBaseValidator
   ) {
     let bundlerProvider = params.bundlerProvider;
-    const shouldUsePaymaster =
-      params.usePaymaster === undefined || params.usePaymaster;
+    const shouldUsePaymaster = !!params.usePaymaster;
     if (
       params.opts?.paymasterConfig &&
       params.opts?.paymasterConfig.policy === "TOKEN_PAYMASTER" &&
@@ -88,13 +87,9 @@ export abstract class ValidatorProvider<
           ...params.opts?.accountConfig,
         })
     );
-    if (shouldUsePaymaster) {
-      let paymasterConfig = params.opts?.paymasterConfig ?? {
-        policy: "VERIFYING_PAYMASTER",
-        baseURL: "http://127.0.0.1:14338"
-      };
-      paymasterConfig = {
-        ...paymasterConfig,
+    if (shouldUsePaymaster && params.opts?.paymasterConfig) {
+      const paymasterConfig = {
+        ...params.opts?.paymasterConfig,
         paymasterProvider:
           params.opts?.paymasterConfig?.paymasterProvider ?? bundlerProvider,
       };
