@@ -50,7 +50,6 @@ export const zeroDevPaymasterAndDataMiddleware = <
           paymasterConfig.paymasterProvider
         );
       } catch (error: any) {
-        console.error(error);
         if (paymasterConfig.onlySendSponsoredTransaction) {
           if (error instanceof AxiosError)
             throw Error(error.response?.data.message);

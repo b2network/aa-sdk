@@ -388,8 +388,7 @@ export class KernelSmartContractAccount<
         ],
       });
     } catch (err: any) {
-      console.error("err occurred:", err.message);
-      throw new Error("Factory Code generation failed");
+      throw new Error("Factory Code generation failed: " + (err as Error).message);
     }
   }
 }
