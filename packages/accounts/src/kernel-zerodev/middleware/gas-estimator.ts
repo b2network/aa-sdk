@@ -26,9 +26,9 @@ export const withZeroDevGasEstimator = (
         provider
       ));
     } catch (error: any) {
-      console.warn(
-        "getGas: eth_maxPriorityFeePerGas failed, falling back to legacy gas price."
-      );
+      // console.warn(
+      //   "getGas: eth_maxPriorityFeePerGas failed, falling back to legacy gas price."
+      // );
     }
 
     if (maxFeePerGas === undefined || maxPriorityFeePerGas === undefined) {
